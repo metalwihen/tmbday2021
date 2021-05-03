@@ -54,7 +54,7 @@ class InstructionView extends StatelessWidget {
           children: [
             Expanded(
                 flex: 1,
-                child: Image.asset('img/kid.png', width: 100, height: 100)),
+                child: Image.asset('assets/img/kid.png', width: 100, height: 100)),
             Expanded(flex: 3, child: Text(kidSpeak)),
           ],
         ));
@@ -119,17 +119,17 @@ class InstructionView extends StatelessWidget {
   Widget buildSkillWindow() {
     return buildRowSectionFormatting("Skills", [
       buildRowImageItem(
-          "img/fire.webp",
+          "assets/img/fire.webp",
           "Fire-Proof",
           ColorConfig.pathColorFire,
           _collectedSkills.contains(MagicSkill.fire_proof)),
       buildRowImageItem(
-          "img/shark.png",
+          "assets/img/shark.png",
           "Shark-Proof",
           ColorConfig.pathColorRiver,
           _collectedSkills.contains(MagicSkill.shark_proof)),
       buildRowImageItem(
-          "img/ghost.png",
+          "assets/img/ghost.png",
           "Ghost-Proof",
           ColorConfig.pathColorNight,
           _collectedSkills.contains(MagicSkill.ghost_proof)),
@@ -138,11 +138,11 @@ class InstructionView extends StatelessWidget {
 
   Widget buildCollectedKeysWindow() {
     return buildRowSectionFormatting("Keys", [
-      buildRowImageItem("img/key1.png", "Key 1", Colors.transparent,
+      buildRowImageItem("assets/img/key1.png", "Key 1", Colors.transparent,
           _collectedKeys.contains(MagicKey.key1)),
-      buildRowImageItem("img/key2.png", "Key 2", Colors.transparent,
+      buildRowImageItem("assets/img/key2.png", "Key 2", Colors.transparent,
           _collectedKeys.contains(MagicKey.key2)),
-      buildRowImageItem("img/key3.png", "Key 3", Colors.transparent,
+      buildRowImageItem("assets/img/key3.png", "Key 3", Colors.transparent,
           _collectedKeys.contains(MagicKey.key3)),
     ]);
   }

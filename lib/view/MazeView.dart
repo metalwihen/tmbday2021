@@ -92,35 +92,35 @@ class CellView extends StatelessWidget {
               angle: _getAvatarRotation(),
               child: CircleAvatar(
                   backgroundColor: ColorConfig.wallColorDefault,
-                  backgroundImage: AssetImage('img/footsteps.gif'))));
+                  backgroundImage: AssetImage('assets/img/footsteps.gif'))));
     }
     switch (cell.type) {
       case CellType.shark_land:
         return Padding(
-            padding: EdgeInsets.all(4.0), child: Image.asset('img/shark.png'));
+            padding: EdgeInsets.all(4.0), child: Image.asset('assets/img/shark.png'));
       case CellType.ghost_land:
         return Padding(
-            padding: EdgeInsets.all(6.0), child: Image.asset('img/ghost.png'));
+            padding: EdgeInsets.all(6.0), child: Image.asset('assets/img/ghost.png'));
       case CellType.fire_land:
-        return Image.asset('img/fire.webp');
+        return Image.asset('assets/img/fire.webp');
       case CellType.key1:
         if (_collectedKeys.contains(MagicKey.key1)) {
           return null;
         }
         return Padding(
-            padding: EdgeInsets.all(4.0), child: Image.asset('img/key1.png'));
+            padding: EdgeInsets.all(4.0), child: Image.asset('assets/img/key1.png'));
       case CellType.key2:
         if (_collectedKeys.contains(MagicKey.key2)) {
           return null;
         }
         return Padding(
-            padding: EdgeInsets.all(4.0), child: Image.asset('img/key2.png'));
+            padding: EdgeInsets.all(4.0), child: Image.asset('assets/img/key2.png'));
       case CellType.key3:
         if (_collectedKeys.contains(MagicKey.key3)) {
           return null;
         }
         return Padding(
-            padding: EdgeInsets.all(4.0), child: Image.asset('img/key3.png'));
+            padding: EdgeInsets.all(4.0), child: Image.asset('assets/img/key3.png'));
       default:
         return null;
     }
