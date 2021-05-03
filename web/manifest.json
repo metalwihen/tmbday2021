@@ -1,7 +1,7 @@
 {
     "name": "tmbday2021",
     "short_name": "tmbday2021",
-    "start_url": ".",
+    "start_url": "https://metalwihen.github.io/tmbday2021/",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
