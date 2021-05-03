@@ -47,26 +47,32 @@ class _HomePageState extends State<HomePage> {
         switch (cellType) {
           case CellType.fire_land:
             collectedSkills.add(MagicSkill.fire_proof);
+            kidSpeakMessage = getKidSpeakMessage();
             setState(() {});
             break;
           case CellType.shark_land:
             collectedSkills.add(MagicSkill.shark_proof);
+            kidSpeakMessage = getKidSpeakMessage();
             setState(() {});
             break;
           case CellType.ghost_land:
             collectedSkills.add(MagicSkill.ghost_proof);
+            kidSpeakMessage = getKidSpeakMessage();
             setState(() {});
             break;
           case CellType.key1:
             collectedKeys.add(MagicKey.key1);
+            kidSpeakMessage = getKidSpeakMessage();
             setState(() {});
             break;
           case CellType.key2:
             collectedKeys.add(MagicKey.key2);
+            kidSpeakMessage = getKidSpeakMessage();
             setState(() {});
             break;
           case CellType.key3:
             collectedKeys.add(MagicKey.key3);
+            kidSpeakMessage = getKidSpeakMessage();
             setState(() {});
             break;
           default:
@@ -233,7 +239,7 @@ class _HomePageState extends State<HomePage> {
       return "That's shark land. Even deep sea hunters are scared of this place.";
     } else if (getNextCellType() == CellType.ghost_land &&
         !collectedSkills.contains(MagicSkill.ghost_proof)) {
-      return "I hear voices. Is that Ghost Town. We're not allowed there.";
+      return "I hear voices. Is that Ghost Town? We're not allowed there.";
     }
 
     // once skill attained
