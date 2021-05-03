@@ -93,11 +93,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _handleKeyEvent(RawKeyEvent event) {
-    if (event.runtimeType.toString() == 'RawKeyDownEvent') {
+    // print("key movement $event");
+    if (event.runtimeType == RawKeyDownEvent) {
       // should run for only KeyUpEvent
       return;
     }
-    // print("key movement $event");
 
     if (event.physicalKey == PhysicalKeyboardKey.arrowUp) {
       updateStateOnMovement(Direction.top);
