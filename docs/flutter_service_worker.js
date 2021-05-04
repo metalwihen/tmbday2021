@@ -7,6 +7,8 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/assets/audio/move.mp3": "c0473de6e59448cb5d13c16f7a9892d1",
+"assets/assets/audio/win.mp3": "f8da12b3eee1fcd491d9dfdbd77616c9",
 "assets/assets/img/key3.png": "6a17a84847623a512d047dcdaeca69cd",
 "assets/assets/img/shark.png": "785d9184301fc394982d2fb639585d53",
 "assets/assets/img/footsteps.gif": "18ad3b1699fdb18889351d5253918402",
@@ -15,15 +17,15 @@ const RESOURCES = {
 "assets/assets/img/key2.png": "e4d940d8e5b0962d1af2bf04c8ee6d92",
 "assets/assets/img/key1.png": "835c5463f719c6210c5f6e6a7b317f01",
 "assets/assets/img/ghost.png": "21b5555a0f45bbcccd7269d14c4617e0",
-"assets/NOTICES": "d56b87aaf27483f9171a079d4e47835e",
-"assets/AssetManifest.json": "e29f62ee7aae1f54421b41ee3acc1db7",
+"assets/NOTICES": "89deec5f6bfb6bd1fd370667a5a08c83",
+"assets/AssetManifest.json": "15907f6419700206ab4ff14507d9c0a7",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "manifest.json": "ee5e0c6dda5003833e602725040efd34",
 "version.json": "67ec4637d86d17f193ec0d910432c29a",
-"main.dart.js": "7fd46d73785d72b8c9cdcab4e996ff78",
-"index.html": "18a642cc1007ebe9f5148c2086a7a78d",
-"/": "18a642cc1007ebe9f5148c2086a7a78d"
+"main.dart.js": "004b477ec27d7639c8b0adb6184c2304",
+"index.html": "f74e73e48af005d977898968f4a0c6fd",
+"/": "f74e73e48af005d977898968f4a0c6fd"
 };
 
 // The application shell files that are downloaded before a service worker can

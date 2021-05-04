@@ -54,8 +54,12 @@ class InstructionView extends StatelessWidget {
           children: [
             Expanded(
                 flex: 1,
-                child: Image.asset('assets/img/kid.png', width: 100, height: 100)),
-            Expanded(flex: 3, child: Text(kidSpeak)),
+                child:
+                    Image.asset('assets/img/kid.png', width: 100, height: 100)),
+            Expanded(
+                flex: 3,
+                child: Padding(
+                    padding: EdgeInsets.all(4.0), child: Text(kidSpeak))),
           ],
         ));
   }

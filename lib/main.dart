@@ -9,6 +9,7 @@ import 'maze/SelectMaze.dart';
 import 'maze/maze.dart';
 import 'view/InstructionView.dart';
 import 'view/MazeView.dart';
+import 'package:video_player/video_player.dart';
 
 // part 'maze.g.dart';
 
@@ -41,6 +42,9 @@ class _HomePageState extends State<HomePage> {
 
   var kidSpeakMessage = "";
 
+  VideoPlayerController _audioWin;
+  VideoPlayerController _audioStep;
+
   final FocusNode _focusNode = FocusNode();
 
   Function(CellType cellType) get onRiddleCallback => (CellType cellType) {
@@ -48,31 +52,37 @@ class _HomePageState extends State<HomePage> {
           case CellType.fire_land:
             collectedSkills.add(MagicSkill.fire_proof);
             kidSpeakMessage = getKidSpeakMessage();
+            _audioWin.play();
             setState(() {});
             break;
           case CellType.shark_land:
             collectedSkills.add(MagicSkill.shark_proof);
             kidSpeakMessage = getKidSpeakMessage();
+            _audioWin.play();
             setState(() {});
             break;
           case CellType.ghost_land:
             collectedSkills.add(MagicSkill.ghost_proof);
             kidSpeakMessage = getKidSpeakMessage();
+            _audioWin.play();
             setState(() {});
             break;
           case CellType.key1:
             collectedKeys.add(MagicKey.key1);
             kidSpeakMessage = getKidSpeakMessage();
+            _audioWin.play();
             setState(() {});
             break;
           case CellType.key2:
             collectedKeys.add(MagicKey.key2);
             kidSpeakMessage = getKidSpeakMessage();
+            _audioWin.play();
             setState(() {});
             break;
           case CellType.key3:
             collectedKeys.add(MagicKey.key3);
             kidSpeakMessage = getKidSpeakMessage();
+            _audioWin.play();
             setState(() {});
             break;
           default:
@@ -82,20 +92,42 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    super.initState();
     setupMaze();
     kidSpeakMessage = getKidSpeakMessage();
+    setupAudioWin();
+    setupAudioStep();
+    super.initState();
   }
 
   @override
   void dispose() {
     _focusNode.dispose();
+    _audioWin.dispose();
+    _audioStep.dispose();
     super.dispose();
   }
 
   void setupMaze() {
     _maze = Maze.fromJson(jsonDecode(SelectMaze.mazeJson));
     // print("${Maze.toJson(_maze)}");
+  }
+
+  void setupAudioWin() {
+    _audioWin = VideoPlayerController.asset(
+      'assets/audio/win.mp3',
+    );
+    _audioWin.setLooping(false);
+
+    Future<void> _initializeVideoPlayerFuture = _audioWin.initialize();
+  }
+
+  void setupAudioStep() {
+    _audioStep = VideoPlayerController.asset(
+      'assets/audio/move.mp3',
+    );
+    _audioStep.setLooping(false);
+
+    Future<void> _initializeVideoPlayerFuture = _audioStep.initialize();
   }
 
   void _handleKeyEvent(RawKeyEvent event) {
@@ -117,6 +149,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   void updateStateOnMovement(Direction directionMoved) {
+    _audioStep.play();
+
     // Prevent state updates if no new movememnt
     bool movementAllowed =
         Maze.canMove(_maze, _currentPosition, directionMoved, collectedSkills);
@@ -130,8 +164,6 @@ class _HomePageState extends State<HomePage> {
             Maze.move(_maze, _currentPosition, directionMoved);
         _currentPosition = newPosition;
         // print(" moved from - $_currentPosition to $newPosition");
-      } else {
-        // play sound later
       }
 
       _lastMove_Direction = directionMoved;
